@@ -1,9 +1,44 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>Exercise 1 - ActionScript 3.0</title>
+		<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		html, body{
+			height: 100%;
+		}
+		body {
+			background-color: #EEE;
+		}
+		#canvas {
+			background-color: #444;
+			float:left;
+		}
+		.context {
+			width:850px;
+			height:600px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			background-color:#222;
+			color:white;
+		}
+		</style>
 	</head>
 	<body>
+	<div class="context">
+		<canvas id="canvas" width="600" height="600"></canvas>
+		<p>Shapes!</p>
+	</div>
 
+	<script src="./circle.js"></script>
+	<script src="./exercise-1.js"></script>
+	<script src="./main.js"></script>
 	</body>
 </html>
