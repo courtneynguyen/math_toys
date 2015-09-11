@@ -1,23 +1,23 @@
-var Vector2 = function(x, y){
-	this.x = x;
-	this.y = y;
+var Ball = function(x, y, radius){
+	this.position = new Vector2(x, y);
+	this.radius = radius;
+	this.hitTopBoundary = false;
 };
 
-Vector2.prototype = {
-	add: function(v) {
-		this.x += v.x;
-		this.y += v.y;
-	},
-	sub : function(v){
-		this.x -= v.x;
-		this.y -= v.y;
-	},
-	scale: function(n){
-		this.x *= n;
-		this.y *= n;
-	},
-	rotation : function(a){
-		var currentAngle = Math.atan2(this.y, this.x);
-
+Ball.prototype.render = function(){
+	draw.circle(this.position, this.radius, 'blue', 2);
+};
+Ball.prototype.update = function(){
+	if(this.hitTopBoundary){
+		this.position.x -= 5;
 	}
+	else{
+		this.position.x += 5;
+	}
+	if(this.position.x >= halfWidth){this.hitTopBoundary = true;}
+	if(this.position.x <= -halfWidth){this.hitTopBoundary = false;}
 };
+
+var myBall = new Ball(0, 0, 20);
+
+updateQueue.push(myBall);
