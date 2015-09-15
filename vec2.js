@@ -1,7 +1,17 @@
 var Vector2 = function(x, y){
 	this.x = x;
 	this.y = y;
-	this.angle = 0;
+	this.angle = function(){
+		return Math.atan2(this.y,this.x);
+	};
+	this.length = function() {
+		var t = this;
+		return Math.sqrt(t.sqlen());
+	};
+	this.sqlen = function(){
+		var t = this;
+		return ((t.x*t.x) + (t.y*t.y));
+	}
 };
 
 Vector2.prototype = {

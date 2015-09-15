@@ -9,12 +9,11 @@ var Clock = function(vec2, rpm){
 };
 
 Clock.prototype.update = function() {
-	this.x2 += 10;
-	this.y2 += 10;
+	this.secondHand.rotate(10 * deg);
 };
 
 Clock.prototype.render = function(){
-	draw.line(this.x, this.y, this.x2, this.y2);
+	draw.line(0, 0, this.secondHand.x, this.secondHand.y);
 };
 
 Clock.prototype.start = function() {

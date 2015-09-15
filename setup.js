@@ -60,7 +60,7 @@ var updateLoop = function () {
 var intervalId;
 var start = function(){
 	resizeWindow();
-	intervalId = setInterval(updateLoop, 1000/30);
+	intervalId = setInterval(updateLoop, 1000/6);
 };
 var stop = function(){
 	clearInterval(intervalId);
