@@ -35,7 +35,7 @@ var draw = {
 		context.strokeStyle = 'skyblue';
 		context.lineWidth = 2;
 		context.beginPath();
-		context.moveTo(x, y);
+		context.moveTo(0, 0);
 		context.lineTo(x2, y2);
 		context.stroke();
 		context.restore();

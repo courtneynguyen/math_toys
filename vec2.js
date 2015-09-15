@@ -1,6 +1,7 @@
 var Vector2 = function(x, y){
 	this.x = x;
 	this.y = y;
+	this.angle = 0;
 };
 
 Vector2.prototype = {
@@ -16,8 +17,13 @@ Vector2.prototype = {
 		this.x *= n;
 		this.y *= n;
 	},
-	rotation : function(a){
-		var currentAngle = Math.atan2(this.y, this.x);
-
+	rotate:function(r){
+		var t = this;
+		var r = parseFloat(r); //in Radians
+		var currentRotation = t.angle(); //in Radians
+		var currentLength = t.length();
+		t.x = Math.cos(currentRotation + r) * currentLength;
+		t.y = Math.sin(currentRotation + r) * currentLength;
+		return t;
 	}
 };
