@@ -28,6 +28,17 @@ var draw = {
 		context.stroke();
 		context.fill();
 		context.restore();
+	},
+	line: function(x, y, x2, y2){
+		context.save();
+		context.translate(x, y);
+		context.strokeStyle = 'skyblue';
+		context.lineWidth = 2;
+		context.beginPath();
+		context.moveTo(x, y);
+		context.lineTo(x2, y2);
+		context.stroke();
+		context.restore();
 	}
 };
 
